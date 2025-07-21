@@ -127,41 +127,39 @@ function initSvgIconAnimation() {
  * via the close button, overlay click, or Escape key.
  */
 function initResumeImageFullscreen() {
-  const resumePreviewImage = document.getElementById('resume-preview-image');
   const fullscreenOverlay = document.getElementById('fullscreen-overlay');
   const fullscreenImage = document.getElementById('fullscreen-image');
   const closeFullscreenButton = document.getElementById('close-fullscreen');
 
-  // Only proceed if all necessary elements are found on the page
-  if (!resumePreviewImage || !fullscreenOverlay || !fullscreenImage || !closeFullscreenButton) {
+  const previewImages = document.querySelectorAll('.clickable-resume');
+
+  if (!fullscreenOverlay || !fullscreenImage || !closeFullscreenButton || previewImages.length === 0) {
     return;
   }
 
-  // Function to open the fullscreen overlay
-  const openFullscreen = () => {
-    fullscreenOverlay.classList.add('active');
-    fullscreenImage.src = resumePreviewImage.src; // Set the source for the full-screen image
-    document.body.classList.add('overlay-active'); // Prevent main body scrolling
-  };
+  previewImages.forEach((img) => {
+    img.addEventListener('click', () => {
+      const fullSrc = img.getAttribute('data-full');
+      fullscreenImage.src = fullSrc;
+      fullscreenOverlay.classList.add('active');
+      document.body.classList.add('overlay-active');
+    });
+  });
 
-  // Function to close the fullscreen overlay
   const closeFullscreen = () => {
     fullscreenOverlay.classList.remove('active');
-    document.body.classList.remove('overlay-active'); // Re-enable main body scrolling
+    fullscreenImage.src = '';
+    document.body.classList.remove('overlay-active');
   };
 
-  // Add event listeners
-  resumePreviewImage.addEventListener('click', openFullscreen);
   closeFullscreenButton.addEventListener('click', closeFullscreen);
 
-  // Close when clicking outside the image on the overlay
   fullscreenOverlay.addEventListener('click', (e) => {
     if (e.target === fullscreenOverlay) {
       closeFullscreen();
     }
   });
 
-  // Close when the Escape key is pressed
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && fullscreenOverlay.classList.contains('active')) {
       closeFullscreen();

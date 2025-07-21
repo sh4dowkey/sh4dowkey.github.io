@@ -470,6 +470,14 @@ body.light .footer-sub {
   box-shadow: 0 0 10px rgba(255,255,255,0.05);
 }
 
+.resume-preview:hover {
+  cursor: pointer;
+}
+.resume-preview + .resume-preview {
+  margin-top: 1rem;
+}
+
+
 
 
  /* === Certificates === */
