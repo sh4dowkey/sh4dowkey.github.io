@@ -1,13 +1,29 @@
 {
   "certificates": [
     {
-      "file": "google-cybersecurity.png",
+      "file": "01-google-cybersecurity.png",
+      "description": ""
+    },
+    {
+      "file": "02-teachnook-cybersecurity.png",
+      "description": ""
+    },
+    {
+      "file": "03-edunet-cybersecurity.png",
+      "description": ""
+    },
+    {
+      "file": "04-owasp-apisec-cybersecurity.png",
       "description": ""
     }
   ],
   "badges": [
     {
-      "file": "leetcode-100days-badge.png",
+      "file": "01-owasp-api-security-top-10-badge.png",
+      "description": ""
+    },
+    {
+      "file": "02-leetcode-100days-badge.png",
       "description": ""
     }
   ]
