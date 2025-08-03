@@ -2,33 +2,40 @@
   "certificates": [
     {
       "file": "01-google-cybersecurity.png",
-      "description": ""
+      "title": "Google Cybersecurity Professional",
+      "issuer": "Googlw"
     },
     {
       "file": "02-teachnook-cybersecurity.png",
-      "description": ""
+      "title": "Teachnook Cybersecurity Intern",
+      "issuer": "Teachnook"
     },
     {
       "file": "03-edunet-cybersecurity.png",
-      "description": ""
+      "title": "Edunet Cybersecurity Intern",
+      "issuer": "Edunet By IBM"
     },
     {
       "file": "04-tata-jobsim-cybersecurity.png",
-      "description": ""
+      "title": "Tata Job Simulation Cybersecurity",
+      "issuer": "Forge"
     },
     {
       "file": "05-owasp-apisec-cybersecurity.png",
-      "description": ""
+      "title": "Owasp Apisec Cybersecurity",
+      "issuer": "APISec"
     }
   ],
   "badges": [
     {
       "file": "01-owasp-api-security-top-10-badge.png",
-      "description": ""
+      "title": "01-Owasp-Api-Security-Top-10-Badge",
+      "issuer": "APISec"
     },
     {
       "file": "02-leetcode-100days-badge.png",
-      "description": ""
+      "title": "02-Leetcode-100Days-Badge",
+      "issuer": "Leetcode"
     }
   ]
 }

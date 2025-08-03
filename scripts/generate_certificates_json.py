@@ -1,5 +1,3 @@
-# scripts/generate_certificates_json.py
-
 import os
 import json
 
@@ -11,7 +9,14 @@ badges = []
 
 for file in sorted(os.listdir(CERT_FOLDER)):
     if file.lower().endswith(('.png', '.jpg', '.jpeg', '.webp')):
-        entry = {"file": file, "description": ""}
+        name_without_ext = os.path.splitext(file)[0]
+
+        entry = {
+            "file": file,
+            "title": name_without_ext.replace("_", " ").title(),
+            "issuer": "Unknown",
+        }
+
         if 'badge' in file.lower():
             badges.append(entry)
         else:
@@ -25,4 +30,4 @@ data = {
 with open(OUTPUT_FILE, 'w') as f:
     json.dump(data, f, indent=2)
 
-print(f"✅ Generated {OUTPUT_FILE}")
+print(f"✅ Generated {OUTPUT_FILE} with {len(certificates)} certificates and {len(badges)} badges")
