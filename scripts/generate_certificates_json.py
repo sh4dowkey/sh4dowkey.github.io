@@ -1,20 +1,35 @@
+# scripts/generate_certificates_json.py
+
 import os
 import json
+import csv
 
 CERT_FOLDER = '../assets/certificates'
 OUTPUT_FILE = '../data/certificates.json'
+METADATA_FILE = '../assets/certificates/cert_metadata.csv'
+
+# Load CSV metadata into a dictionary
+metadata = {}
+if os.path.exists(METADATA_FILE):
+    with open(METADATA_FILE, newline='') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            filename = row['file'].strip()
+            metadata[filename] = {
+                "title": row.get("title", "").strip(),
+                "issuer": row.get("issuer", "").strip()
+            }
 
 certificates = []
 badges = []
 
 for file in sorted(os.listdir(CERT_FOLDER)):
     if file.lower().endswith(('.png', '.jpg', '.jpeg', '.webp')):
-        name_without_ext = os.path.splitext(file)[0]
-
+        meta = metadata.get(file, {})
         entry = {
             "file": file,
-            "title": name_without_ext.replace("_", " ").title(),
-            "issuer": "Unknown",
+            "title": meta.get("title", "Unknown"),
+            "issuer": meta.get("issuer", "Unknown")
         }
 
         if 'badge' in file.lower():
@@ -30,4 +45,4 @@ data = {
 with open(OUTPUT_FILE, 'w') as f:
     json.dump(data, f, indent=2)
 
-print(f"✅ Generated {OUTPUT_FILE} with {len(certificates)} certificates and {len(badges)} badges")
+print(f"✅ Generated {OUTPUT_FILE}")

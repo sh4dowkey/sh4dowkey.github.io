@@ -3,7 +3,7 @@
     {
       "file": "01-google-cybersecurity.png",
       "title": "Google Cybersecurity Professional",
-      "issuer": "Googlw"
+      "issuer": "Google"
     },
     {
       "file": "02-teachnook-cybersecurity.png",
@@ -17,8 +17,8 @@
     },
     {
       "file": "04-tata-jobsim-cybersecurity.png",
-      "title": "Tata Job Simulation Cybersecurity",
-      "issuer": "Forge"
+      "title": "TATA Job Simulation Cybersecurity",
+      "issuer": "Forage"
     },
     {
       "file": "05-owasp-apisec-cybersecurity.png",
@@ -29,12 +29,12 @@
   "badges": [
     {
       "file": "01-owasp-api-security-top-10-badge.png",
-      "title": "01-Owasp-Api-Security-Top-10-Badge",
+      "title": "Owasp Api Security Top10 Badge",
       "issuer": "APISec"
     },
     {
       "file": "02-leetcode-100days-badge.png",
-      "title": "02-Leetcode-100Days-Badge",
+      "title": "Leetcode 100Days Badge",
       "issuer": "Leetcode"
     }
   ]
