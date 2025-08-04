@@ -16,14 +16,31 @@
       "issuer": "Edunet By IBM"
     },
     {
-      "file": "04-tata-jobsim-cybersecurity.png",
-      "title": "TATA Job Simulation Cybersecurity",
-      "issuer": "Forage"
-    },
-    {
-      "file": "05-owasp-apisec-cybersecurity.png",
+      "file": "04-owasp-apisec-cybersecurity.png",
       "title": "Owasp Apisec Cybersecurity",
       "issuer": "APISec"
+    }
+  ],
+  "jobsim": [
+    {
+      "file": "01-tata-jobsim.png",
+      "title": "TATA Job Simulation Cybersecurity",
+      "issuer": "TATA, Forage"
+    },
+    {
+      "file": "02-datacom-jobsim.png",
+      "title": "Datacom Job Simulation Cybersecurity",
+      "issuer": "Datacom, Forage"
+    },
+    {
+      "file": "03-deloitte-jobsim.png",
+      "title": "Deloitte Job Simulation Cybersecurity",
+      "issuer": "Deloitte, Forage"
+    },
+    {
+      "file": "04-mastercard-jobsim.png",
+      "title": "Mastercard Job Simulation Cybersecurity",
+      "issuer": "Mastrecard, Forage"
     }
   ],
   "badges": [

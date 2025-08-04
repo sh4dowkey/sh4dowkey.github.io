@@ -3,12 +3,13 @@ fetch("data/certificates.json")
   .then(res => res.json())
   .then(data => {
     const certGrid = document.getElementById("certificates-grid");
+    const jobsimGrid = document.getElementById("jobsim-grid");
     const badgeGrid = document.getElementById("badges-grid");
 
     const createCard = (item, index = 0) => {
       const card = document.createElement("div");
       card.className = "cert-card";
-      card.style.animationDelay = `${index * 100}ms`; // cascading delay
+      card.style.animationDelay = `${index * 200}ms`;
 
       const img = document.createElement("img");
       img.src = `assets/certificates/${item.file}`;
@@ -27,7 +28,6 @@ fetch("data/certificates.json")
       issuer.className = "cert-issuer";
       issuer.textContent = item.issuer || "";
 
-
       content.appendChild(title);
       content.appendChild(issuer);
 
@@ -37,9 +37,17 @@ fetch("data/certificates.json")
       return card;
     };
 
+    // Certificates
     data.certificates.forEach((cert, index) =>
       certGrid.appendChild(createCard(cert, index))
     );
+
+    // ✅ FIXED: Use correct jobsim data here
+    data.jobsim.forEach((jobsim, index) =>
+      jobsimGrid.appendChild(createCard(jobsim, index))
+    );
+
+    // Badges
     data.badges.forEach((badge, index) =>
       badgeGrid.appendChild(createCard(badge, index))
     );

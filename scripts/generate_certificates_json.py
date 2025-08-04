@@ -22,6 +22,7 @@ if os.path.exists(METADATA_FILE):
 
 certificates = []
 badges = []
+jobsim =[]
 
 for file in sorted(os.listdir(CERT_FOLDER)):
     if file.lower().endswith(('.png', '.jpg', '.jpeg', '.webp')):
@@ -34,11 +35,14 @@ for file in sorted(os.listdir(CERT_FOLDER)):
 
         if 'badge' in file.lower():
             badges.append(entry)
+        elif 'jobsim' in file.lower():
+            jobsim.append(entry)
         else:
             certificates.append(entry)
 
 data = {
     "certificates": certificates,
+    "jobsim" : jobsim,
     "badges": badges
 }
 

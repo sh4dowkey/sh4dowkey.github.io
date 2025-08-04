@@ -506,6 +506,7 @@ body.light .footer-sub {
 }
 
 #certificates-grid,
+#jobsim-grid,
 #badges-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -566,11 +567,6 @@ body.light .footer-sub {
   margin-bottom: 0.7rem;
 }
 
-.cert-description {
-  font-size: 0.95rem;
-  line-height: 1.4;
-  color: #ccc;
-}
 
 /* Light theme overrides */
 body.light .cert-card {
